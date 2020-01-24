@@ -26,5 +26,7 @@ public class Register extends AppCompatActivity {
         email=(EditText)findViewById( R.id.email );
         password=(EditText)findViewById( R.id.password );
         phoneNumber=(EditText)findViewById( R.id.PhoneNbr);
+
+
     }
 }

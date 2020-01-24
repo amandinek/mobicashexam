@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "238233844675",
+    "firebase_url": "https://mobicashexam.firebaseio.com",
+    "project_id": "mobicashexam",
+    "storage_bucket": "mobicashexam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238233844675:android:14ddf2dd7a0813073b1b76",
+        "android_client_info": {
+          "package_name": "com.chel.mobicashexam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238233844675-1g33mtdcmrlgapunqumubg43mj9d8c53.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chel.mobicashexam",
+            "certificate_hash": "71b1d63ae64e5c0a0b945835272b231f4f538952"
+          }
+        },
+        {
+          "client_id": "238233844675-cro7koen4a968v7s082094ks2r2cefun.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkgxB9wn_QRrfPlp8PU_Wyfr6vHOh9o-s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238233844675-cro7koen4a968v7s082094ks2r2cefun.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
