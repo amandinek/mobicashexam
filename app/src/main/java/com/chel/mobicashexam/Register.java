@@ -3,6 +3,7 @@ package com.chel.mobicashexam;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -82,6 +83,20 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
 
 
+    }
+    public void createAuthListner(){
+        authStateListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                final FirebaseUser user= firebaseAuth.getCurrentUser();
+                if(user !=null){
+                    Intent intent = new Intent( Register.this,UserDetails.class );
+                    intent.setFlags( Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK );
+                    startActivity( intent );
+                    finish();
+                }
+            }
+        };
     }
 
 
