@@ -1,13 +1,18 @@
 package com.chel.mobicashexam;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -38,8 +43,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         signUp.setOnClickListener(  this );
         cancel.setOnClickListener( this );
         auth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser = auth.getCurrentUser();
-        updateUI(currentUser);
+//        git
 
         createAuthListner();
 //        createAuthProgressDialog();}
@@ -57,8 +61,30 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
     }
     public void createnUser(){
+        final String frstName =firstName.toString().trim();
+        final String lstName =lastName.toString().trim();
+        final String userEmail = email.toString().trim();
+        final String phnumber = phoneNumber.toString().trim();
+        String passwrd = password.toString().trim();
+
+        auth.createUserWithEmailAndPassword( userEmail,passwrd )
+                .addOnCompleteListener( this , new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            Toast.makeText( Register.this , "authentication successful" , Toast.LENGTH_SHORT ).show();
+                        }else{
+                            Toast.makeText( Register.this , "authentication failed" , Toast.LENGTH_SHORT ).show();
+                        }
+                    }
+                } );
+
+
+
 
     }
+
+
 
 
 }
