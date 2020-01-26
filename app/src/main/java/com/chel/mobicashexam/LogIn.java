@@ -1,3 +1,6 @@
+
+////////////user login activity////////
+
 package com.chel.mobicashexam;
 
 import androidx.annotation.NonNull;
@@ -54,6 +57,7 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
         }
 
         if(v == cancel){
+            ///////////////if canceled return to the home page////////
             Intent intent = new Intent( LogIn.this, MainActivity.class );
             intent.setFlags( Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK );
             startActivity( intent );
@@ -61,6 +65,7 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
 
         }
         if(v == textView){
+            //////////////// goes to the register page for registration////////
             Intent intent = new Intent( LogIn.this, Register.class );
             intent.setFlags( Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK );
             startActivity( intent );
@@ -72,6 +77,8 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
 
 
     }
+
+    ///////////////////////method for verifying user info and authenticate the user to log in in the app///////
 
     private void userLogin() {
 
