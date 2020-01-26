@@ -8,14 +8,18 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button btn;
+    private Button btn,btnSignIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_main );
+
+
         btn =(Button) findViewById( R.id.btn );
+        btnSignIn =(Button) findViewById(R.id.btnsignIn);
         btn.setOnClickListener( this );
+        btnSignIn.setOnClickListener( this );
     }
 
     @Override
@@ -25,6 +29,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     intent.setFlags( Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK );
                     startActivity( intent );
                     finish();
+        }
+
+        if(v == btnSignIn ){
+            Intent intent = new Intent( MainActivity.this,LogIn.class );
+            intent.setFlags( Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK );
+            startActivity( intent );
+            finish();
         }
     }
 }

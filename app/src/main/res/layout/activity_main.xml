@@ -31,11 +31,11 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="270dp"
+        android:layout_marginEnd="260dp"
         android:layout_marginRight="270dp"
         android:layout_marginBottom="77dp"
         android:background="@color/colorPrimaryDark"
-        android:text="signin"
+        android:text="register"
         tools:ignore="InvalidId" />
 
     <Button
@@ -45,11 +45,11 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="82dp"
+        android:layout_marginEnd="70dp"
         android:layout_marginRight="82dp"
         android:layout_marginBottom="74dp"
         android:background="@color/colorPrimaryDark"
-        android:text="REGISTER"
+        android:text="signin"
         tools:ignore="InvalidId" />
 
 

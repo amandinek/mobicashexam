@@ -60,10 +60,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         auth = FirebaseAuth.getInstance();
         db= FirebaseDatabase.getInstance();
         users =db.getReference("users");
-//        git
 
-//        createAuthListner();
-//        createAuthProgressDialog();}
     }
 
     @Override
@@ -73,16 +70,15 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         }
 
         if(v== cancel){
-//            something
+            Intent intent = new Intent( Register.this, MainActivity.class );
+            intent.setFlags( Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK );
+            startActivity( intent );
+            finish();
         }
 
     }
     public void createnUser(){
-//        final String frstName =firstName.toString().trim();
-//        final String lstName =lastName.toString().trim();
-//        final String userEmail = email.toString().trim();
-//        final String phnumber = phoneNumber.toString().trim();
-//        String passwrd = password.toString().trim();
+
 
 
           if(TextUtils.isEmpty(email.getText().toString())){
