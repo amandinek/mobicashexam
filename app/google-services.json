@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "238233844675-61b82in9vpnl46gp571npsoglaalohe6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chel.mobicashexam",
+            "certificate_hash": "67cee35fb8bda1a78d6dcc66c852ba65feac3125"
+          }
+        },
+        {
           "client_id": "238233844675-1g33mtdcmrlgapunqumubg43mj9d8c53.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
