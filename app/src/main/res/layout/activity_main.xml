@@ -31,9 +31,23 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="150dp"
-        android:layout_marginRight="150dp"
-        android:layout_marginBottom="62dp"
+        android:layout_marginEnd="270dp"
+        android:layout_marginRight="270dp"
+        android:layout_marginBottom="77dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="signin"
+        tools:ignore="InvalidId" />
+
+    <Button
+        android:id="@+id/btnsignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="82dp"
+        android:layout_marginRight="82dp"
+        android:layout_marginBottom="74dp"
         android:background="@color/colorPrimaryDark"
         android:text="REGISTER"
         tools:ignore="InvalidId" />

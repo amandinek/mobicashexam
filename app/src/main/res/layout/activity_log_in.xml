@@ -41,6 +41,7 @@
         android:orientation="horizontal"
         android:weightSum="2"
         android:layout_below="@+id/layaout"
+        android:id="@+id/layout2"
         android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -60,7 +61,7 @@
             />
 
         <Button
-            android:id="@+id/regsterbtn"
+            android:id="@+id/cancel"
 
             android:layout_marginLeft="6dp"
             android:layout_width="0dp"
@@ -73,7 +74,17 @@
 
             />
 
+
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text"
+        android:layout_below="@+id/layout2"
+        android:layout_marginTop="59dp"
+        android:layout_marginLeft="100dp"
+        android:text="alredy registered sign up here" />
 
 
 </RelativeLayout>
