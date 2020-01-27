@@ -3,15 +3,18 @@ package com.chel.mobicashexam;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.chel.mobicashexam.model.DetailAdapter;
 import com.chel.mobicashexam.model.User;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -23,22 +26,25 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.R.layout.simple_list_item_1;
-
-public class UserDetails extends AppCompatActivity {
+public class UserDetails extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "UserDetails";
 
     private TextView textView;
+    List<String> detailList;
+    ArrayAdapter<String> adapter;
+    private ListView listView;
+    private Button logOut;
+
+
     private FirebaseAuth auth;
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseDatabase mDb;
     private DatabaseReference mRef;
-    private ListView listView;
-    String userID;
-    List<String> detailList;
-    ArrayAdapter<String> adapter;
+    GoogleSignInAccount googleSignInAccount;
 
-    private String[] detail= new String[]{"firstName","LastNmae","Email","Phone number"};
+    String userID;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +54,14 @@ public class UserDetails extends AppCompatActivity {
         textView =(TextView) findViewById(R.id.text);
         listView = (ListView) findViewById(R.id.listView);
         detailList =new ArrayList<>();
+        logOut = (Button) findViewById(R.id.logOut);
 
         mDb = FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
         mRef = mDb.getReference();
         userID = user.getUid();
+        logOut.setOnClickListener(this);
 
         //////////////////////////////////authenticating the user/////////////////////////////////
         authListener = new FirebaseAuth.AuthStateListener() {
@@ -67,7 +75,10 @@ public class UserDetails extends AppCompatActivity {
                 } else {
 
                     Log.d(TAG, "onAuthStateChanged:signed_out");
-                    toastMessage("Successfully signed out.");
+//                    toastMessage("Successfully signed out.");
+                    Intent intent = new Intent( UserDetails.this, LogIn.class );
+                    intent.setFlags( Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK );
+                    startActivity( intent );
                 }
             }
         };
@@ -77,7 +88,9 @@ public class UserDetails extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 detailList.clear();
-                //////////////retrieving user informations /////////////////
+                //////////////retrieving user details /////////////////
+
+
                 for(DataSnapshot ds : dataSnapshot.getChildren()){
                     User userInfo = new User();
                     userInfo.setFirstName(ds.child(userID).getValue(User.class).getFirstName());
@@ -131,9 +144,16 @@ public class UserDetails extends AppCompatActivity {
         }
     }
 
+/////////////////////log out button/////////
+    @Override
+    public void onClick(View v) {
+        if(v== logOut){
 
+           FirebaseAuth.getInstance().signOut();
 
+        }
 
+    }
 
 
 }

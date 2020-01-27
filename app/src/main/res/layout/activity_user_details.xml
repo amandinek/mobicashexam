@@ -21,6 +21,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/logOut"
         android:layout_below="@+id/listView"
         android:layout_marginTop="139dp"
         android:text="Logout"
