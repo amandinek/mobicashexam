@@ -30,9 +30,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="260dp"
-        android:layout_marginRight="270dp"
+        android:layout_marginEnd="229dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginRight="229dp"
         android:layout_marginBottom="77dp"
         android:background="@color/colorPrimaryDark"
         android:text="register"
@@ -45,12 +45,18 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="70dp"
-        android:layout_marginRight="82dp"
-        android:layout_marginBottom="74dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginRight="96dp"
+        android:layout_marginBottom="383dp"
         android:background="@color/colorPrimaryDark"
         android:text="signin"
         tools:ignore="InvalidId" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/view"
+        />
 
 
 </RelativeLayout>
