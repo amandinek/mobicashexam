@@ -43,8 +43,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn"
+        android:layout_above="@id/view"
         android:layout_marginLeft="70dp"
-        android:layout_marginTop="68dp"
         android:text="alredy registered sign in here"
         android:textColor="@color/white" />
 

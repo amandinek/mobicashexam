@@ -13,9 +13,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserDetails"></activity>
+        <activity android:name=".UserDetails">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.chel.mobicashexam.MainActivity">
+            </meta-data>
+        </activity>
         <activity android:name=".LogIn" />
-        <activity android:name=".Register" />
+        <activity android:name=".Register">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.chel.mobicashexam.MainActivity">
+            </meta-data>
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
