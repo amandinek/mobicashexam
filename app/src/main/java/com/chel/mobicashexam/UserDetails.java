@@ -1,3 +1,8 @@
+
+
+///////////////////////retrieving and displaying user datas////////////
+
+
 package com.chel.mobicashexam;
 
 import androidx.annotation.NonNull;
@@ -60,6 +65,7 @@ public class UserDetails extends AppCompatActivity implements View.OnClickListen
         auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
         mRef = mDb.getReference();
+        mRef.keepSynced(true);
         userID = user.getUid();
         logOut.setOnClickListener(this);
 
@@ -75,7 +81,6 @@ public class UserDetails extends AppCompatActivity implements View.OnClickListen
                 } else {
 
                     Log.d(TAG, "onAuthStateChanged:signed_out");
-//                    toastMessage("Successfully signed out.");
                     Intent intent = new Intent( UserDetails.this, LogIn.class );
                     intent.setFlags( Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK );
                     startActivity( intent );

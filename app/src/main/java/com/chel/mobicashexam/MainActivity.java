@@ -1,3 +1,7 @@
+
+
+////////////////////////////////////home page/////////////////////
+
 package com.chel.mobicashexam;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,21 +10,28 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button btn,btnSignIn;
+    private Button btn,viewDetails;
+
+    private TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_main );
 
-
+/////////////calling the views//////////////
         btn =(Button) findViewById( R.id.btn );
-        btnSignIn =(Button) findViewById(R.id.btnsignIn);
+        text =(TextView) findViewById(R.id.text);
+        viewDetails=(Button) findViewById(R.id.view);
         btn.setOnClickListener( this );
-        btnSignIn.setOnClickListener( this );
+        text.setOnClickListener( this );
+        viewDetails.setOnClickListener(this);
     }
+
+    //////////////onClick method for Buttons
 
     @Override
     public void onClick(View v) {
@@ -31,8 +42,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     finish();
         }
 
-        if(v == btnSignIn ){
+        if(v == text ){
             Intent intent = new Intent( MainActivity.this,LogIn.class );
+            intent.setFlags( Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK );
+            startActivity( intent );
+            finish();
+        }
+
+        if(v== viewDetails){
+            Intent intent = new Intent( MainActivity.this,UserDetails.class );
             intent.setFlags( Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK );
             startActivity( intent );
             finish();

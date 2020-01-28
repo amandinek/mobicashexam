@@ -1,3 +1,7 @@
+
+///////////////user registration activity/////////
+
+
 package com.chel.mobicashexam;
 
 import androidx.annotation.NonNull;
@@ -49,11 +53,13 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         phoneNumber = (EditText) findViewById( R.id.PhoneNbr );
         rootLayout =(RelativeLayout)findViewById(R.id.rootLayout);
 
-        signUp.setOnClickListener(  this );
-        cancel.setOnClickListener( this );
         auth = FirebaseAuth.getInstance();
         db= FirebaseDatabase.getInstance();
         users =db.getReference("users");
+        users.keepSynced(true);
+
+        signUp.setOnClickListener(  this );
+        cancel.setOnClickListener( this );
 
     }
 
@@ -71,6 +77,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         }
 
     }
+    ///////////////////////////creating a new user and verifying if the entry are not empty//////////
     public void createnUser(){
 
 
