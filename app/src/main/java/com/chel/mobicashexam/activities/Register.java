@@ -2,7 +2,7 @@
 ///////////////user registration activity/////////
 
 
-package com.chel.mobicashexam;
+package com.chel.mobicashexam.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 
+import com.chel.mobicashexam.R;
 import com.chel.mobicashexam.model.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;

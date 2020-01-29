@@ -1,17 +1,27 @@
 package com.chel.mobicashexam.model;
 
 public class User {
+    private int id;
     private  String email,password,firstName,lastName,phone;
 
     public User() {
     }
 
-    public User(String email, String password, String firstName, String lastName, String phone) {
+    public User( int id, String email, String password, String firstName, String lastName, String phone) {
+        this.id = id;
         this.email = email;
         this.password = password;
         this.firstName = firstName;
         this.lastName =lastName;
         this.phone = phone;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getEmail() {

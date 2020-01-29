@@ -1,7 +1,7 @@
 
 ////////////user login activity////////
 
-package com.chel.mobicashexam;
+package com.chel.mobicashexam.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.chel.mobicashexam.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
@@ -100,7 +101,7 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        startActivity(new Intent(LogIn.this,UserDetails.class));
+                        startActivity(new Intent(LogIn.this, UserDetails.class));
                         finish();
 
                     }

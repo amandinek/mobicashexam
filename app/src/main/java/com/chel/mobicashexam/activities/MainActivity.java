@@ -2,7 +2,7 @@
 
 ////////////////////////////////////home page/////////////////////
 
-package com.chel.mobicashexam;
+package com.chel.mobicashexam.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.chel.mobicashexam.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btn,viewDetails;
@@ -36,21 +38,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if(v== btn){
-            Intent intent = new Intent( MainActivity.this,Register.class );
+            Intent intent = new Intent( MainActivity.this, Register.class );
                     intent.setFlags( Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK );
                     startActivity( intent );
                     finish();
         }
 
         if(v == text ){
-            Intent intent = new Intent( MainActivity.this,LogIn.class );
+            Intent intent = new Intent( MainActivity.this, LogIn.class );
             intent.setFlags( Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK );
             startActivity( intent );
             finish();
         }
 
         if(v== viewDetails){
-            Intent intent = new Intent( MainActivity.this,UserDetails.class );
+            Intent intent = new Intent( MainActivity.this, UserDetails.class );
             intent.setFlags( Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK );
             startActivity( intent );
             finish();
